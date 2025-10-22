@@ -1,11 +1,12 @@
-{
-  "folders": [
-    {
-      "path": "file:///home/project"
-    }
-  ],
-  "settings": {
-    "security.workspace.trust.enabled": true,
-    "security.workspace.trust.startupPrompt": "never"
-  }
-}
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const initServer = () => {
+    const app = express();
+    app.use(cors());
+    app.use(bodyParser.json());
+    return app;
+};
+
+module.exports = initServer;
